@@ -76,11 +76,12 @@ app.post('/api/duel', (req, res) => {
 })
 
 app.get('/api/player', (req, res) => {
-    rollbar.info("Player stats updated")
+    
     try {
         res.status(200).send(playerRecord)
     } catch (error) {
         console.log('ERROR GETTING PLAYER STATS', error)
+        rollbar.info("Player stats not updated")
         res.sendStatus(400)
     }
 })
