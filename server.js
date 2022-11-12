@@ -21,7 +21,7 @@ app.use("/styles", express.static(path.join(__dirname, "./public/index.css")))
 app.use("/js", express.static(path.join(__dirname, "./public/index.js")))
 
 app.get('/api/robots', (req, res) => {
-        rollbar("Checking all the bots")   
+        rollbar.info("Checking all the bots")   
     try {
         res.status(200).send(botsArr)
     } catch (error) {
